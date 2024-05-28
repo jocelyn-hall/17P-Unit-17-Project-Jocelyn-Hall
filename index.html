@@ -1,0 +1,112 @@
+<!-- 
+Requirements
+[  ] Customized Slideshow
+[  ] Visibility Animation (Lesson 17.1)
+[  ] Numeric Animation (Lesson 17.2)
+
+Select ONE Additional Feature to Add  
+[ no ] Feature 1 - Upload a Font to Your Replit 
+[ no ] Feature 2 - Use a Google Font  
+[ no ] Feature 3 - Include .on(“click”) feature 
+[ no ] Feature 4 - :hover feature 
+[ no ] Feature 5 - Separate Code Into Three Files .html, .css, .js 
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project: Interactive Slideshow</title>
+        <style>
+            body{
+                background-color: aliceblue;
+            }
+            .slide{
+                border: 12px solid black;
+                border-radius: 30px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                height: 500px;
+                background-color: white;
+            }
+
+            .slide-text{
+                background-color: rgba(240,248,255,0.8);
+                width: 80%;
+                text-align: center;
+                border-radius: 20px;
+                font-family: "Poetsen One", sans-serif;
+            }
+
+            h1{
+                text-align: center;
+                width: 100%;
+            }
+
+            button:hover{
+                   background: linear-gradient(#408c99, #599bb3);
+            }
+
+            button{
+              width:140px;
+              height:50px;
+              border-width:1px;
+              color:#fff;
+              border-color:#599bb3;
+              font-weight:bold;
+              border-radius: 8px;
+              box-shadow: 0px 10px 14px -7px #276873;
+              text-shadow: 0px 1px 0px #3d768a;
+              background:linear-gradient(#599bb3, #408c99);
+            }
+
+            .buttons{
+                display:flex;
+                justify-content: center;
+                margin-top: 5px;
+            }
+
+        </style>
+    </head>
+    <body>
+    <h1>Slideshow of [My Art]</h1>
+    <br>
+        <div class="slide">
+            <img src="images/Logo1.JPG" width="400" alt="Mushrooms">
+            <div class="slide-text"><h3>Logo #1</h3></div>
+        </div>
+
+        <div class="buttons">
+            <button type="button"> ↝ Next ↝ </button>
+        </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    var numClick = 0;
+    $("button").on("click",function(){
+        numClick++;
+        if(numClick == 1){
+            $("img").attr("src","images/Logo2.jpeg");
+            $("h3").text("Logo #2");
+        }
+        else if(numClick == 2){
+            $("img").attr("src","images/Logo3.png");
+            $("h3").text("Logo #3");
+        }
+        else if(numClick == 3){
+            $("img").attr("src","images/Logo4.png");
+            $("h3").text("Logo #4");
+        }
+        else{
+            $("img").attr("src","images/Logo1.JPG");
+            $("h3").text("Logo #1");
+            numClick = 0;
+        }
+    })
+    
+    </script> 
+    
+    </body>
+</html>
